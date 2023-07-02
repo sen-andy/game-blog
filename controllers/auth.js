@@ -15,38 +15,39 @@ router.post("/login", async (req, res) => {
 
         const token = jwt.sign({ _id: foundUser._id }, JWT_KEY);
         
-        res.status(201).json({
-            message: "user login",
-            foundUser,
-            token
-        })
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: true
+        });
+
+        res.redirect("http://localhost:3000/");
     } catch (err) {
         res.status(500).json({
             message: err.message
-        });
+        }).redirect("/");
     }
 });
 
-router.post("/signup", async (req, res) => {
-    try {
-        const { email, password } = req.body;
-        const hashPassword = await bcrypt.hashSync(password, SALT);
-        const newUser = new User({ email, password: hashPassword });
-        await newUser.save();
+// router.post("/signup", async (req, res) => {
+//     try {
+//         const { email, password } = req.body;
+//         const hashPassword = await bcrypt.hashSync(password, SALT);
+//         const newUser = new User({ email, password: hashPassword });
+//         await newUser.save();
 
-        const token = jwt.sign({ _id: newUser._id }, JWT_KEY);
+//         const token = jwt.sign({ _id: newUser._id }, JWT_KEY);
 
-        res.status(201).json({
-            message: "user created",
-            newUser,
-            token
-        })
-    } catch (err) {
-        res.status(500).json({
-            message: err.message
-        });
-    }
-});
+//         res.status(201).json({
+//             message: "user created",
+//             newUser,
+//             token
+//         })
+//     } catch (err) {
+//         res.status(500).json({
+//             message: err.message
+//         });
+//     }
+// });
 
 
 module.exports = router;

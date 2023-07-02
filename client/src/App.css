@@ -1,6 +1,52 @@
+@font-face {
+  font-family: 'cool';
+  src: url('../public/fonts/coolvetica\ rg.otf');
+}
+
+@font-face {
+  font-family: 'butler';
+  src: url("../public/fonts/Butler_Regular.otf");
+}
+
 * {
   padding: 0;
   border: none;
   background-color: transparent;
   margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1, h2, h3 {
+  font-family: 'cool';
+  color: #2c3e50;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+p, a, button, label, input, textarea {
+  font-family: 'butler';
+  font-size: 1.2em;
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+img,
+textarea,
+input,
+.rounded-border {
+    border-radius: 5px;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+}
+
+.max-width {
+  max-width: 1200px;
+  min-width: 350px;
+  margin: 0 auto;
 }

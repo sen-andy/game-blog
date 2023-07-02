@@ -11,6 +11,9 @@ const Post = new mongoose.Schema(
             type: String,
             required: true
         },
+        img: {
+            type: String
+        },
         body: {
             type: String
         }

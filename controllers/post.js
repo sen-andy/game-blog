@@ -1,17 +1,18 @@
 const router = require("express").Router();
 const Post = require("../models/Post");
+const sessionValidation = require("../middlewares/session");
 
-router.get("/", async (_, res) => {
+router.get("/", sessionValidation, async (_, res) => {
     try {
         const allPost = await Post.find();
         res.status(200).json({
             message: "all post",
-            allPost
+            payload: allPost
         });
     } catch (err) {
-        res.status(500).json({
+        res.status(500).json([{
             message: err.message
-        });
+        }]);
     }
 });
 
@@ -21,7 +22,7 @@ router.get("/:_id", async (req, res) => {
         const foundPost = await Post.findById(_id);
         res.status(200).json({
             message: "found post",
-            foundPost
+            payload: foundPost
         });
     } catch (err) {
         res.status(500).json({
@@ -30,14 +31,14 @@ router.get("/:_id", async (req, res) => {
     }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", sessionValidation, async (req, res) => {
     try {
         const newPost = new Post(req.body);
         await newPost.save();
 
         res.status(201).json({
             message: "post created",
-            newPost
+            payload: newPost
         });
     } catch (err) {
         res.status(500).json({
@@ -46,13 +47,13 @@ router.post("/", async (req, res) => {
     }
 });
 
-router.put("/:_id", async (req, res) => {
+router.put("/:_id", sessionValidation, async (req, res) => {
     try {
         const updatedPost = await Post.updateOne(req.params, { $set: req.body });
 
         res.status(201).json({
             message: "post updated",
-            updatedPost
+            payload: updatedPost
         });
     } catch (err) {
         res.status(500).json({
@@ -61,13 +62,13 @@ router.put("/:_id", async (req, res) => {
     }
 });
 
-router.delete("/:_id", async (req, res) => {
+router.delete("/:_id", sessionValidation, async (req, res) => {
     try {
         const deletedPost = await Post.deleteOne(req.params);
 
         res.status(201).json({
             message: "post deleted",
-            deletedPost
+            payload: deletedPost
         });
     } catch (err) {
         res.status(500).json({

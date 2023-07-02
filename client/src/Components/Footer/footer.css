@@ -1,0 +1,29 @@
+footer {
+    background-color: #83e1e5;
+    width: 100%;
+}
+
+#footer-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2em;
+    padding: 2em;
+    margin: 0 auto;
+}
+
+#footer-wrap > div:first-child {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#footer-wrap > div:first-child,
+#social {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+#social-links > a > img {
+    margin-right: 0.5em;
+}

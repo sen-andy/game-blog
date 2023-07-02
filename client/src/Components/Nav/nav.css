@@ -6,11 +6,4 @@ nav {
 #nav-wrap {
     display: flex;
     justify-content: space-between;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-.nav-item {
-    height: 50px;
-    width: 50px;
 }

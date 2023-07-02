@@ -1,0 +1,59 @@
+/*! Animations !*/
+
+.anim-hover-sm {
+    animation: make-normal-sm 200ms;
+    overflow: hidden;
+}
+
+.anim-hover-sm:hover {
+    animation: make-big-sm 200ms forwards;
+}
+
+@keyframes make-normal-sm {
+    from {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes make-big-sm {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.anim-hover {
+    animation: make-normal 300ms;
+    overflow: hidden;
+}
+
+.anim-hover:hover {
+    animation: make-big 300ms forwards;
+}
+
+@keyframes make-normal {
+    from {
+        transform: scale(1.02);
+        box-shadow: 0 18px 20px -18px #2c3e50;
+    }
+    to {
+        transform: scale(1);
+        box-shadow: 0 10px 15px -18px #2c3e50;
+    }
+}
+
+@keyframes make-big {
+    from {
+        transform: scale(1);
+        box-shadow: 0 10px 15px -18px #2c3e50;
+    }
+    to {
+        transform: scale(1.02);
+        box-shadow: 0 18px 20px -18px #2c3e50;
+    }
+}

@@ -5,10 +5,12 @@ const JWT_KEY = process.env.JWT_KEY;
 const sessionValidation = async (req, res, next) => {
     try {
         if (req.method === "OPTIONS") next();
-        if (!req.headers.authorization) throw Error("no authorization");
-        const authToken = req.headers.authorization.includes("Bearer")
-            ? req.headers.authorization.split(" ")[1]
-            : req.headers.authorization
+        console.log(req.cookies.token);
+        const auth = req.headers.authorization || req.cookies.token;
+        if (!auth) throw Error("no authorization");
+        const authToken = auth.includes("Bearer")
+            ? auth.split(" ")[1]
+            : auth
         
         const payload = authToken ? jwt.verify(authToken, JWT_KEY) : undefined;
         if (!payload) throw Error("token is invalid");
@@ -19,9 +21,9 @@ const sessionValidation = async (req, res, next) => {
         res.user = foundUser;
         next();
     } catch (err) {
-        res.status(500).json({
+        res.status(500).json([{
             message: err.message
-        });
+        }]);
     }
 }
 
