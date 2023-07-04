@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Post = require("../models/Post");
 const sessionValidation = require("../middlewares/session");
 
-router.get("/", sessionValidation, async (_, res) => {
+router.get("/", async (_, res) => {
     try {
         const allPost = await Post.find();
         res.status(200).json({
