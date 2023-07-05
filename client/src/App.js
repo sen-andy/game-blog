@@ -9,15 +9,17 @@ import PostForm from './Components/Post/PostForm';
 
 function App() {
   return (
-    <div id="wrap">
-      <Nav />
-      <Routes>
-        <Route path='/' element={<Grid />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/create' element={<PostForm />} />
-      </Routes>      
-      <Footer />
-    </div>
+    <>
+      <div id="wrap">
+        <Nav />
+        <Routes>
+          <Route path='/' element={<Grid />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/create' element={<PostForm />} />
+        </Routes>      
+        <Footer />
+      </div>
+    </>
   );
 }
 
