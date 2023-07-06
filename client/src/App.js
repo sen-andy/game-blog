@@ -7,6 +7,8 @@ import Login from './Components/Login/Login';
 import Footer from './Components/Footer/Footer';
 import PostForm from './Components/Post/PostForm';
 
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+
 function App() {
   return (
     <>
@@ -15,7 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Grid />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/create' element={<PostForm />} />
+          <Route path='/create' element={<PrivateRoute><PostForm /></PrivateRoute>} />
         </Routes>      
         <Footer />
       </div>

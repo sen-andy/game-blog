@@ -1,0 +1,42 @@
+input, textarea {
+    background-color: whitesmoke;
+}
+
+textarea {
+    height: 80%;
+}
+
+button {
+    text-align: center;
+    height: 40px;
+    width: 120px;
+}
+
+form > div > button:nth-child(1) {
+    background-color: #83E1E5;
+}
+
+form > div > button:nth-child(2) {
+    background-color: #FDDF7F;
+}
+
+#form-wrap {
+    width: 100%;
+    background-color: white;
+    padding: 2em;
+}
+
+#form-wrap > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+    height: 60vh;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#form-wrap > form > div {
+    display: flex;
+    gap: 0.5em;
+}
