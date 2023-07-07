@@ -17,7 +17,11 @@ function App() {
         <Routes>
           <Route path='/' element={<Grid />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/create' element={<PrivateRoute><PostForm /></PrivateRoute>} />
+          <Route path='/create' element={
+            <PrivateRoute>
+              <PostForm />
+            </PrivateRoute>}
+          />
         </Routes>      
         <Footer />
       </div>

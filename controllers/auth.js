@@ -16,7 +16,7 @@ router.post("/login", async (req, res) => {
         const token = jwt.sign({ _id: foundUser._id }, JWT_KEY);
         
         res.cookie("token", token, {
-            httpOnly: true,
+            httpOnly: false,
             secure: true
         });
 
