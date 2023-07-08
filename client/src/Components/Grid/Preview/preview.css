@@ -1,17 +1,63 @@
-#preview-post {
+
+.preview-post:first-of-type {
+    position: relative;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    font-size: 2em;
+    height: 100%;
+    box-shadow: 0 11px 15px -15px #2c3e50;
+}
+
+.preview-post:first-of-type > img {
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.preview-post:first-of-type > h3,
+.preview-post:first-of-type > div {
+    padding: 0.5em 0px 0.5em 0.5em;
+    text-shadow: 6px 6px #2c3e50;
+}
+
+.preview-post:first-of-type > h3 {
+    top: -0.3em;
+    margin-left: 0em;
+}
+
+.preview-post:first-of-type > div {
+    position: absolute;
+    bottom: -0.3em;
+}
+
+.preview-post:first-of-type > div > h2,
+.preview-post:first-of-type > div > h3,
+.preview-post:first-of-type > div > p {
+    color: white
+}
+
+.preview-post:first-of-type > div > p {
+    max-height: 1.2em;
+    text-shadow: 4px 4px #2c3e50;
+    overflow: hidden;
+}
+
+.preview-post {
     box-shadow: 0 10px 15px -18px #2c3e50;
     background-color: white;
     overflow: hidden;
     position: relative;
 }
 
-#preview-post > img {
+.preview-post > img {
     width: 100%;
     height: 60%;
     object-fit: cover;
 }
 
-#preview-post > h3:first-child {
+.preview-post > h3:first-child {
     color: white;
     text-shadow: 2px 2px #2c3e50;
     top: 170px;
@@ -19,16 +65,16 @@
     margin-left: 1em;
 }
 
-#preview-post > div {
+.preview-post > div {
     overflow: hidden;
     padding: 0.5em 1em;
 }
 
-#preview-post > div > h2 {
+.preview-post > div > h2 {
     font-size: 2em;
 }
 
-#preview-post > div > p {
+.preview-post > div > p {
     height: 3.6em;
     overflow: hidden;
     padding-top: 0.5em;

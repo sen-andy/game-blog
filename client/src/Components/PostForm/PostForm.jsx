@@ -16,7 +16,7 @@ const PostForm = ({ sessionToken }) => {
 
     const submitPost = async e => {
         e.preventDefault();
-
+        
         const options = {
             method: "POST",
             body: JSON.stringify({ title, author, body }),

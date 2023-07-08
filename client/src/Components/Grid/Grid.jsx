@@ -25,7 +25,11 @@ function Grid() {
     return (
         <main>
             <div id="grid-wrap"  className="max-width">
-            { !posts ? <p>Error while loading</p> : posts.length === 0 ? <p>loading</p> : posts.map((post, i) => <Preview key={i} post={post} />) }
+            { !posts
+                ? <p>Error while loading</p>
+                : posts.length === 0
+                ? <p>loading</p>
+                : posts.map((post, i) => <Preview key={i} post={post} />) }
             </div>
         </main>
     );
