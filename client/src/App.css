@@ -37,6 +37,11 @@ p, a, button, label, input, textarea {
   text-decoration: none;
 }
 
+input, textarea {
+  background-color: whitesmoke;
+  padding: 0.5em;
+}
+
 img,
 textarea,
 input,

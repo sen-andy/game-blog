@@ -1,14 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './login.css';
 import '../form.css';
 
-function Login() {
+function Login({ updateLocalToken }) {
+    const navigate = useNavigate();
+    const [ email, setEmail ] = useState("");
+    const [ password, setPassword ] = useState("");
+
+    const submitLogin = async e => {
+        e.preventDefault();
+
+        const options = {
+            method: "POST",
+            body: JSON.stringify({ email, password }),
+            headers: new Headers({
+                "Content-Type": "application/json"
+            })
+        }
+
+        console.log(options);
+
+        await fetch("http://127.0.0.1:4000/auth/login", options)
+            .then(res => res.json())
+            .then(data => updateLocalToken(data.token))
+            .catch(err => console.log(err.message));
+        
+        navigate("/create", { replace: true });
+    }
+
     return (
         <main>
-            <form action='http://localhost:4000/auth/login' method='POST'>
-                <input type='email' name='email' placeholder='ex. andy.cool'></input>
-                <input type='password' name='password' placeholder='ex. bean89dk'></input>
-                <button type='submit'>Submit</button>
-            </form>
+            <div id="login-wrap" className="max-width">
+                <form action="">
+                <h1>Login</h1>
+                    <label>Email:</label>
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                    />
+                    <label>Password:</label>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                    />
+                    <div id="buttons">
+                        <button onClick={submitLogin} className="rounded-border">Submit</button>
+                    </div>
+                </form>
+            </div>
         </main>
     );
 }

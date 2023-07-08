@@ -1,8 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const cookieParser = require("cookie-parser");
-const path = require("path");
 const { dbConnect } = require("./db");
 const cors = require("./middlewares/cors");
 const postController = require("./controllers/post");
@@ -11,7 +9,6 @@ const authController = require("./controllers/auth");
 const HOST = process.env.HOST;
 const PORT = process.env.POST;
 
-app.use(cookieParser());
 app.use(cors);
 app.use(express.static(__dirname + "/client/public"));
 app.use(express.json());

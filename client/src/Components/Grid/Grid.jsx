@@ -13,7 +13,7 @@ function Grid() {
                 "Accept": "*/*"
             }
         }
-        fetch("http://localhost:4000/post/", options)
+        fetch("http://127.0.0.1:4000/post/", options)
             .then(res => res.json())
             .then(data => {
                 console.log(data.message);

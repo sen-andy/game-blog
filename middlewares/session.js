@@ -5,8 +5,7 @@ const JWT_KEY = process.env.JWT_KEY;
 const sessionValidation = async (req, res, next) => {
     try {
         if (req.method === "OPTIONS") next();
-        console.log(req.cookies.token);
-        const auth = req.headers.authorization || req.cookies.token;
+        const auth = req.headers.authorization;
         if (!auth) throw Error("no authorization");
         const authToken = auth.includes("Bearer")
             ? auth.split(" ")[1]
