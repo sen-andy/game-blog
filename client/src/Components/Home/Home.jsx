@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import './grid.css';
-import Preview from './Preview/Preview';
+import './home.css';
+import Posts from './Posts/Posts';
 
-function Grid() {
+function Home({ isHome }) {
     const [ posts, setPost ] = useState([]);
 
     useEffect(() => {
@@ -16,23 +16,16 @@ function Grid() {
         fetch("http://127.0.0.1:4000/post/", options)
             .then(res => res.json())
             .then(data => {
-                console.log(data.message);
                 setPost(data.payload);
             })
             .catch(err => console.log(err.message));
-    }, []);
+    });
 
     return (
         <main>
-            <div id="grid-wrap"  className="max-width">
-            { !posts
-                ? <p>Error while loading</p>
-                : posts.length === 0
-                ? <p>loading</p>
-                : posts.map((post, i) => <Preview key={i} post={post} />) }
-            </div>
+            <Posts posts={posts} isHome={isHome} />
         </main>
     );
 }
 
-export default Grid;
+export default Home;

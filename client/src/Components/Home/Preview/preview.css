@@ -1,44 +1,46 @@
-
-.preview-post:first-of-type {
+.hero-post {
     position: relative;
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 3;
     font-size: 2em;
+    min-height: 370px;
+    max-height: none;
     height: 100%;
     box-shadow: 0 11px 15px -15px #2c3e50;
 }
 
-.preview-post:first-of-type > img {
+.hero-post > img {
     height: 100%;
+    width: 100%;
     object-fit: cover;
     z-index: 0;
 }
 
-.preview-post:first-of-type > h3,
-.preview-post:first-of-type > div {
+.hero-post > h3,
+.hero-post > div {
     padding: 0.5em 0px 0.5em 0.5em;
     text-shadow: 6px 6px #2c3e50;
 }
 
-.preview-post:first-of-type > h3 {
+.hero-post > h3 {
     top: -0.3em;
     margin-left: 0em;
 }
 
-.preview-post:first-of-type > div {
+.hero-post > div {
     position: absolute;
     bottom: -0.3em;
 }
 
-.preview-post:first-of-type > div > h2,
-.preview-post:first-of-type > div > h3,
-.preview-post:first-of-type > div > p {
+.hero-post > div > h2,
+.hero-post > div > h3,
+.hero-post > div > p {
     color: white
 }
 
-.preview-post:first-of-type > div > p {
+.hero-post > div > p {
     max-height: 1.2em;
     text-shadow: 4px 4px #2c3e50;
     overflow: hidden;
@@ -47,13 +49,16 @@
 .preview-post {
     box-shadow: 0 10px 15px -18px #2c3e50;
     background-color: white;
+    height: 40vh;
+    min-height: 370px;
+    max-height: 470px;
     overflow: hidden;
     position: relative;
 }
 
 .preview-post > img {
     width: 100%;
-    height: 60%;
+    height: 55%;
     object-fit: cover;
 }
 
@@ -78,4 +83,16 @@
     height: 3.6em;
     overflow: hidden;
     padding-top: 0.5em;
+}
+
+@media (min-height: 993px) {
+    .preview-post > div > p {
+        height: 4.75em;
+    }
+}
+
+@media (min-height: 1120px) {
+    .preview-post > div > p {
+        height: 5.9em;
+    }
 }
