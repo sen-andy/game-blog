@@ -8,7 +8,6 @@ function Menu() {
             <Link to="/" id="home-btn">Home</Link>
             <Link to="/posts" id="all-posts-btn">All Posts</Link>
             <Link to="/create" id="create-post-btn">Create Post</Link>
-            <a href="#footer">Contact Me</a>
         </div>
     );
 }

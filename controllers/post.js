@@ -10,30 +10,31 @@ router.get("/", async (_, res) => {
             payload: allPost
         });
     } catch (err) {
-        res.status(500).json([{
-            message: err.message
-        }]);
+        res.status(500).json({
+            error: err.message
+        });
     }
 });
 
-router.get("/:count", async (req, res) => {
-    try {
-        const { count } = req.params;
-        const allPost = await Post.find().sort({ createdAt: -1 }).limit(count).exec();
-        res.status(200).json({
-            message: "all post",
-            payload: allPost
-        });
-    } catch (err) {
-        res.status(500).json([{
-            message: err.message
-        }]);
-    }
-});
+// router.get("/:count", async (req, res) => {
+//     try {
+//         const { count } = req.params;
+//         const allPost = await Post.find().sort({ createdAt: -1 }).limit(count).exec();
+//         res.status(200).json({
+//             message: "all post",
+//             payload: allPost
+//         });
+//     } catch (err) {
+//         res.status(500).json({
+//             error: err.message
+//         });
+//     }
+// });
 
 router.get("/:_id", async (req, res) => {
     try {
         const { _id } = req.params;
+
         const foundPost = await Post.findById(_id);
         res.status(200).json({
             message: "found post",
@@ -41,7 +42,7 @@ router.get("/:_id", async (req, res) => {
         });
     } catch (err) {
         res.status(500).json({
-            message: err.message
+            error: err.message
         });
     }
 });
@@ -57,7 +58,7 @@ router.post("/", sessionValidation, async (req, res) => {
         });
     } catch (err) {
         res.status(500).json({
-            message: err.message
+            error: err.message
         });
     }
 });
@@ -72,7 +73,7 @@ router.put("/:_id", sessionValidation, async (req, res) => {
         });
     } catch (err) {
         res.status(500).json({
-            message: err.message
+            error: err.message
         });
     }
 });
@@ -87,7 +88,7 @@ router.delete("/:_id", sessionValidation, async (req, res) => {
         });
     } catch (err) {
         res.status(500).json({
-            message: err.message
+            error: err.message
         });
     }
 });

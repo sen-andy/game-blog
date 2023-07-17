@@ -32,6 +32,7 @@ textarea {
     gap: 0.5em;
     height: 60vh;
     margin: 0 auto;
+    transform: translate(0,-3px);
 }
 
 #login-wrap > form > div,

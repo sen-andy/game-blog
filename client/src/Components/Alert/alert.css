@@ -1,0 +1,13 @@
+#alert {
+    text-align: center;
+    background-color: #ff6b6b;
+    padding: 1em 3em;
+    position: fixed;
+    top: 100px;
+    border-radius: 5px;
+}
+
+#alert > h2 {
+    color: #222f3e;
+    font-weight: 400;
+}

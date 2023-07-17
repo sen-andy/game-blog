@@ -1,0 +1,25 @@
+#post-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: white;
+    width: 100%;
+}
+
+#post-wrap > div {
+    padding: 2em;
+}
+
+#post-wrap > div > h1 {
+    font-size: 4em;
+    transform: translate(0, -7px);
+    text-align: center;
+    padding: 0.5em;
+}
+
+#post-wrap > div > div {
+    padding: 0 4em;
+}
+
+#post-wrap > div > img {
+    width: 100%;
+}

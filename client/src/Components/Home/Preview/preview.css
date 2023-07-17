@@ -95,4 +95,8 @@
     .preview-post > div > p {
         height: 5.9em;
     }
+
+    .hero-post {
+        grid-column-end: 5;
+    }
 }

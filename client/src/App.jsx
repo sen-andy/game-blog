@@ -4,9 +4,11 @@ import './Animation.css';
 import { Routes, Route } from 'react-router-dom';
 import Nav from './Components/Nav/Nav';
 import Home from './Components/Home/Home';
-import Login from './Components/Login/Login';
 import Footer from './Components/Footer/Footer';
+import Login from './Components/Login/Login';
+import Post from './Components/Post/Post';
 import PostForm from './Components/PostForm/PostForm';
+import NotFound from './Components/NotFound/NotFound';
 
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 
@@ -30,12 +32,14 @@ function App() {
         <Routes>
           <Route path='/' element={<Home isHome={true} />} />
           <Route path='/posts' element={<Home isHome={false} />} />
+          <Route path='/post/:post_id' element={<Post />} />
           <Route path='/login' element={<Login updateLocalToken={updateLocalToken} />} />
           <Route path='/create' element={
             <PrivateRoute>
               <PostForm sessionToken={sessionToken} />
             </PrivateRoute>}
           />
+          <Route path='*' element={<NotFound />} />
         </Routes>      
         <Footer />
       </div>
