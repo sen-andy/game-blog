@@ -13,3 +13,18 @@
     padding: 2em;
     background-color: white;
 }
+
+@media (max-width: 960px) {
+    #all-posts-wrap,
+    #posts-wrap {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    #all-posts-wrap,
+    #posts-wrap {
+        grid-template-columns: 1fr;
+        padding: 2em 1em;
+    }
+}

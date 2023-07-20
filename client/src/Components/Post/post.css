@@ -23,3 +23,22 @@
 #post-wrap > div > img {
     width: 100%;
 }
+
+@media (max-width: 600px) {
+    #post-wrap {
+        text-align: center;
+    }
+
+    #post-wrap > div {
+        padding: 2em 1em;
+    }
+
+    #post-wrap > div > h1 {
+        font-size: 3em;
+        padding: em;
+    }
+
+    #post-wrap > div > div {
+        padding: 0;
+    }
+}

@@ -21,7 +21,7 @@ textarea {
 #form-wrap {
     width: 100%;
     background-color: white;
-    padding: 2em;
+    padding: 0 2em;
 }
 
 #login-wrap > form,
@@ -31,6 +31,7 @@ textarea {
     justify-content: center;
     gap: 0.5em;
     height: 60vh;
+    padding: 2em;
     margin: 0 auto;
     transform: translate(0,-3px);
 }
@@ -39,4 +40,38 @@ textarea {
 #form-wrap > form > div {
     display: flex;
     gap: 0.5em;
+}
+
+@media (max-width: 700px) {
+    #login-wrap,
+    #form-wrap {
+        width: 100%;
+        background-color: white;
+        padding: 0em;
+    }
+
+    #login-wrap > form > div,
+    #form-wrap > form > div {
+        display: flex;
+        gap: 0.5em;
+    }
+
+    #buttons {
+        align-self: center;
+    }
+
+    #login-wrap > form {
+        height: min-content;
+    }
+
+    form > h1,
+    form > label {
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    /* #form-wrap > form {
+
+    } */
 }

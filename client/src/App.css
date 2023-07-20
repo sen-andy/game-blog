@@ -13,6 +13,7 @@
   border: none;
   background-color: transparent;
   margin: 0;
+  transition: 0.5s;
 }
 
 body {
@@ -35,6 +36,7 @@ p, a, button, label, input, textarea {
   font-size: 1.2em;
   color: #2c3e50;
   text-decoration: none;
+  line-height: 1.5em;
 }
 
 input, textarea {
@@ -56,6 +58,6 @@ input,
 
 .max-width {
   max-width: 1200px;
-  min-width: 350px;
+  min-width: 300px;
   margin: 0 auto;
 }

@@ -80,7 +80,7 @@
 }
 
 .preview-post > div > p {
-    height: 3.6em;
+    height: 3em;
     overflow: hidden;
     padding-top: 0.5em;
 }
@@ -98,5 +98,17 @@
 
     .hero-post {
         grid-column-end: 5;
+    }
+}
+
+@media (max-width: 960px) {
+    .hero-post {
+        grid-column-end: 4;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero-post {
+        grid-column-end: 2;
     }
 }

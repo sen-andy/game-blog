@@ -34,13 +34,13 @@ function Login({ updateLocalToken }) {
             <div id="login-wrap" className="max-width">
                 <form action="">
                 <h1>Login</h1>
-                    <label>Email:</label>
+                    <label>Email</label>
                     <input
                         type="email"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
-                    <label>Password:</label>
+                    <label>Password</label>
                     <input
                         type="password"
                         value={password}

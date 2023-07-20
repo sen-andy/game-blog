@@ -14,13 +14,13 @@ function Footer() {
                 <div id="social">
                     <div id="social-links">
                         <a href="https://www.linkedin.com/in/andy-sen/" rel="noreferrer" target="_blank">
-                            <img className="icon anim-hover-sm" src="/logos/linkedin.png" alt="linkedin-logo" />
+                            <i className="fa-brands fa-linkedin fa-2xl"></i>
                         </a>
                         <a href="https://github.com/sen-andy" rel="noreferrer" target="_blank">
-                            <img className="icon anim-hover-sm" src="/logos/github.png" alt="github-logo" />
+                            <i className="fa-brands fa-github fa-2xl"></i>
                         </a>
                         <a href="mailto: andy.sen@icloud.com" rel="noreferrer" target="_blank">
-                            <img className="icon anim-hover-sm" src="/logos/email.png" alt="email-logo" />
+                            <i className="fa-solid fa-envelope fa-2xl"></i>
                         </a>
                     </div>
                     <h1>Connect with me.</h1>

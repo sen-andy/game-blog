@@ -30,16 +30,14 @@ function App() {
       <div id="wrap">
         <Nav />
         <Routes>
-          <Route path='/' element={<Home isHome={true} />} />
-          <Route path='/posts' element={<Home isHome={false} />} />
-          <Route path='/post/:post_id' element={<Post />} />
-          <Route path='/login' element={<Login updateLocalToken={updateLocalToken} />} />
-          <Route path='/create' element={
-            <PrivateRoute>
-              <PostForm sessionToken={sessionToken} />
-            </PrivateRoute>}
-          />
-          <Route path='*' element={<NotFound />} />
+          <Route element={ <PrivateRoute /> }>
+            <Route path='/' element={ <Home isHome={true} /> } />
+            <Route path='/posts' element={ <Home isHome={false} /> } />
+            <Route path='/post/:post_id' element={ <Post /> } />
+            <Route path='/create' element={ <PostForm sessionToken={sessionToken} /> } />
+          </Route>
+          <Route path='/login' element={ <Login updateLocalToken={updateLocalToken} /> } />
+          <Route path='*' element={ <NotFound /> } />
         </Routes>      
         <Footer />
       </div>

@@ -24,8 +24,28 @@ footer {
     gap: 0.5em;
 }
 
-#social-links > a > img {
-    margin-right: 0.5em;
+#social-links {
+    display: flex;
+    gap: 1em;
 }
 
-/* @media  */
+#social-links > a > i {
+    font-size: 2em;
+}
+
+@media (max-width: 600px) {
+    #footer-wrap {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 2em 1em;
+    }
+
+    #about-me > img {
+        margin: 0 auto;
+    }
+
+    #social-links {
+        justify-content: center;
+    }
+
+}
