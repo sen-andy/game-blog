@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createContext } from 'react';
 import './App.css';
 import './Animation.css';
 import { Routes, Route } from 'react-router-dom';
@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
       if(localStorage.getItem("token")) {
-          setSessionToken(localStorage.getItem("token"))
+          setSessionToken(localStorage.getItem("token"));
       }
   }, []);
 
@@ -31,11 +31,11 @@ function App() {
         <Nav />
         <Routes>
           <Route element={ <PrivateRoute /> }>
-            <Route path='/' element={ <Home isHome={true} /> } />
-            <Route path='/posts' element={ <Home isHome={false} /> } />
-            <Route path='/post/:post_id' element={ <Post /> } />
             <Route path='/create' element={ <PostForm sessionToken={sessionToken} /> } />
           </Route>
+          <Route path='/post/:post_id' element={ <Post /> } />
+          <Route path='/' element={ <Home isHome={true} /> } />
+          <Route path='/posts' element={ <Home isHome={false} /> } />
           <Route path='/login' element={ <Login updateLocalToken={updateLocalToken} /> } />
           <Route path='*' element={ <NotFound /> } />
         </Routes>      
