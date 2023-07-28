@@ -16,20 +16,20 @@ router.get("/", async (_, res) => {
     }
 });
 
-// router.get("/:count", async (req, res) => {
-//     try {
-//         const { count } = req.params;
-//         const allPost = await Post.find().sort({ createdAt: -1 }).limit(count).exec();
-//         res.status(200).json({
-//             message: "all post",
-//             payload: allPost
-//         });
-//     } catch (err) {
-//         res.status(500).json({
-//             error: err.message
-//         });
-//     }
-// });
+router.get("/limit/:count", async (req, res) => {
+    try {
+        const { count } = req.params;
+        const allPost = await Post.find().sort({ createdAt: -1 }).limit(count).exec();
+        res.status(200).json({
+            message: "all post",
+            payload: allPost
+        });
+    } catch (err) {
+        res.status(500).json({
+            error: err.message
+        });
+    }
+});
 
 router.get("/:_id", async (req, res) => {
     try {

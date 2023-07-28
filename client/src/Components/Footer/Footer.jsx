@@ -6,7 +6,7 @@ function Footer() {
         <footer>
             <div id="footer-wrap" className="max-width">
                 <div id="about-me">
-                    <img className="icon" src="/logos/logo.svg" alt="main-logo" />
+                    <img className="icon" src="/logos/shovel-icon.png" alt="main-logo" />
                     <h1>Thanks</h1>
                     <h2>For checking out my page.</h2>
                     <p>My name is Andy Sen. I've taught myself Unity, C#, Pixel Animation and more with online videos and tutorials. I created the pixel art/animations in Aesprite.</p>
