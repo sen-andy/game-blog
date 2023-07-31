@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Alert from '../Alert/Alert'
 import './post.css';
 
 const Post = () => {
@@ -27,7 +28,7 @@ const Post = () => {
         <main>
             <div id="post-wrap"  className="max-width">
                 { selectedPost.error
-                    ? <Alert message={message} />
+                    ? <Alert message={selectedPost.error.message} />
                     : !selectedPost.img
                     ? <p>loading</p>
                     : 
