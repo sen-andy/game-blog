@@ -21,7 +21,7 @@ function Login({ updateLocalToken }) {
 
         console.log(options);
 
-        await fetch("http://127.0.0.1:4000/auth/login", options)
+        await fetch("http://localhost:4000/auth/login", options)
             .then(res => res.json())
             .then(data => updateLocalToken(data.token))
             .catch(err => console.log(err.message));

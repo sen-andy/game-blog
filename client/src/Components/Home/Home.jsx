@@ -14,7 +14,7 @@ function Home({ isHome }) {
                 "Accept": "*/*"
             }
         }
-        fetch("http://127.0.0.1:4000/post/", options)
+        fetch("http://localhost:4000/post/", options)
             .then(res => res.json())
             .then(data => {
                 if (data.error) return setPost(data);
