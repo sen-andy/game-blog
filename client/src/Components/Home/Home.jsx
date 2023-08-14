@@ -8,6 +8,7 @@ function Home({ isHome }) {
 
     useEffect(() => {
         const options = {
+            mode: "cors",
             credentials: "include",
             headers: {
                 "Content-Type": "application/json",
