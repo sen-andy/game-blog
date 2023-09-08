@@ -26,9 +26,8 @@ const PostForm = ({ sessionToken }) => {
             })
         };
 
-        await fetch("http://localhost:4000/post/", options)
+        await fetch("/post/", options)
             .then(res => res.json())
-            .then(data => console.log(data));
         
         clearForm();
     }

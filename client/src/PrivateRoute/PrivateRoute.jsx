@@ -5,7 +5,7 @@ import jwt_decode from "jwt-decode";
 const PrivateRoute = () => {
     const token = localStorage.getItem("token");
     const decodedToken = jwt_decode(token);
-    console.log(decodedToken);
+    // console.log(decodedToken);
     return  !token ? <Navigate to="/login" /> : <Outlet />
 }
 

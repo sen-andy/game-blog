@@ -15,7 +15,7 @@ const Post = () => {
             })
         }
 
-        fetch(`http://localhost:4000/post/${post_id}`, options)
+        fetch(`/post/${post_id}`, options)
             .then(res => res.json())
             .then(data => {
                 if (data.error) return setSelectedPost(data);
