@@ -6,7 +6,7 @@ const { dbConnect } = require("./db");
 const postController = require("./controllers/post");
 const authController = require("./controllers/auth");
 
-const PORT = process.env.POST;
+const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -23,5 +23,5 @@ if (process.env.NODE_ENV === "PRODUCTION") {
 
 app.listen(PORT, () => {
     dbConnect();
-    console.log(`[server] connected to ${PORT}`);
+    console.log(`[server] connected on ${PORT}`);
 });

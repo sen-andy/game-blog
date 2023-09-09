@@ -33,6 +33,12 @@ footer {
     font-size: 2em;
 }
 
+#about-me > .icon {
+    align-self: baseline;
+    width: inherit;
+    border-radius: inherit;
+}
+
 @media (max-width: 600px) {
     #footer-wrap {
         grid-template-columns: 1fr;
