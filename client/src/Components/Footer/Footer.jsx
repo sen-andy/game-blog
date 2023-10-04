@@ -13,6 +13,9 @@ function Footer() {
                 </div>
                 <div id="social">
                     <div id="social-links">
+                        <a href="https://sen-andy.github.io/portfolio/" rel="noreferrer" target="_blank">
+                            <i class="fa-solid fa-window-maximize fa-2xl"></i>
+                        </a>
                         <a href="https://www.linkedin.com/in/andy-sen/" rel="noreferrer" target="_blank">
                             <i className="fa-brands fa-linkedin fa-2xl"></i>
                         </a>

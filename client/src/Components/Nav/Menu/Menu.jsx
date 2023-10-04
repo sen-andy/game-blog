@@ -7,7 +7,7 @@ function Menu() {
         <div id="nav-menu" className="rounded-border">
             <Link to="/" id="home-btn">Home</Link>
             <Link to="/posts" id="all-posts-btn">All Posts</Link>
-            <Link to="/create" id="create-post-btn">Create Post</Link>
+            {/* <Link to="/create" id="create-post-btn">Create Post</Link> */}
         </div>
     );
 }
